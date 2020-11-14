@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <VS7_RedirectQuickCompare>
+            <version>0.1.0</version>
+        </VS7_RedirectQuickCompare>
+    </modules>
+    <global>
+        <models>
+            <vs7_redirectquickcompare>
+                <class>VS7_RedirectQuickCompare_Model</class>
+                <resourceModel>vs7_redirectquickcompare_resource</resourceModel>
+            </vs7_redirectquickcompare>
+            <vs7_redirectquickcompare_resource>
+                <class>VS7_RedirectQuickCompare_Model_Resource</class>
+            </vs7_redirectquickcompare_resource>
+        </models>
+        <events>
+            <controller_action_postdispatch_catalog_product_compare_add>
+                <observers>
+                    <vs7_redirectquickcompare>
+                        <type>singleton</type>
+                        <class>VS7_RedirectQuickCompare_Model_Observer</class>
+                        <method>redirectFromQuick</method>
+                    </vs7_redirectquickcompare>
+                </observers>
+            </controller_action_postdispatch_catalog_product_compare_add>
+        </events>
+    </global>
+</config>
